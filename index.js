@@ -50,7 +50,7 @@ function processFirstItem(stringList, callback) {
 */
 function processLength(list, callback) {
   return callback(list.length);
-}
+} // Passed
 
 /**
  * ### Challenge `processLastItem`
@@ -66,9 +66,9 @@ function processLength(list, callback) {
  * Invoking `processLastItem` passing `['foo', 'bar']` and `(str) => str + str`,
  * should return 'barbar'.
 */
-function processLastItem(/* CODE HERE */) {
-  /* CODE HERE */
-}
+function processLastItem(stringList, callback) {
+  return callback(stringList[stringList.length - 1]);
+} // Passed
 
 /**
  * ### Challenge `processSum`
@@ -87,9 +87,15 @@ function processLastItem(/* CODE HERE */) {
  * [2] Invoking `processSum` passing `[]` and `(num) => num + 1000`,
  * should return 1000.
 */
-function processSum(/* CODE HERE */) {
-  /* CODE HERE */
-}
+
+
+function processSum(/*code*/) {
+  /* let sum = 0;
+  for (let i = 0, i < numberList.length, i++) {
+    sum += numberList[i];
+  }
+  return callback(sum); */
+} // Not passinh
 
 /**
  * ### Challenge `processProduct`
@@ -109,8 +115,8 @@ function processSum(/* CODE HERE */) {
  * [2] Invoking `processProduct` passing 25 and 0 and `(num) => num + 1000`,
  * should return 1000.
 */
-function processProduct(/* CODE HERE */) {
-  /* CODE HERE */
+function processProduct(num1, num2, callback) {
+  return callback(num1 * num2);
 }
 
 /**
