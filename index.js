@@ -89,13 +89,13 @@ function processLastItem(stringList, callback) {
 */
 
 
-function processSum(/*code*/) {
-  /* let sum = 0;
-  for (let i = 0, i < numberList.length, i++) {
+function processSum(numberList, callback) {
+  let sum = 0;
+  for (let i = 0; i < numberList.length; i++) {
     sum += numberList[i];
   }
-  return callback(sum); */
-} // Not passinh
+  return callback(sum);
+} // Not passing
 
 /**
  * ### Challenge `processProduct`
@@ -117,7 +117,7 @@ function processSum(/*code*/) {
 */
 function processProduct(num1, num2, callback) {
   return callback(num1 * num2);
-}
+} // Passed
 
 /**
  * ### Challenge `processContains`
@@ -139,9 +139,14 @@ function processProduct(num1, num2, callback) {
  * "lady gaga" and `['foo', 'bar']` and `(bool) => bool ? 'nice!' : 'sad'`,
  * should return "sad".
 */
-function processContains(/* CODE HERE */) {
-  /* CODE HERE */
-}
+function processContains(item, list, callback) {
+  for (i = 0; i < list.length; i++) {
+    if (list[i] === item) {
+      return callback(true);
+    }
+  }
+  return callback(false);
+} // Passed
 
 /**
  * ### Challenge `processDuplicateFree`
@@ -165,6 +170,8 @@ function processContains(/* CODE HERE */) {
 function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */) {
   /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
 }
+
+
 
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
@@ -287,6 +294,10 @@ function counterMakerWithLimit(/* CODE HERE */) {
 /////////////// END OF CHALLENGE ///////////////
 /////////////// END OF CHALLENGE ///////////////
 /////////////// END OF CHALLENGE ///////////////
+
+
+
+
 
 if (typeof exports !== 'undefined') {
   // IGNORE: Test/Env Detected
