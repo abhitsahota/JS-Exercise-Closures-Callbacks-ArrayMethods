@@ -95,7 +95,7 @@ function processSum(numberList, callback) {
     sum += numberList[i];
   }
   return callback(sum);
-} // Not passing
+} // Passed
 
 /**
  * ### Challenge `processProduct`
@@ -191,8 +191,11 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
  * @returns an array with all the runners' full names in the following format: "Smith, John".
  * The full names appear in the array in the same order the runners appear in the `runners` array.
 */
-function getFullNames(/* CODE HERE */) {
-  /* CODE HERE */
+function getFullNames(runners) {
+  runners.forEach((element) => {
+    return (element.last_name + ", " + element.first_name);
+  });
+
 }
 
 /**
@@ -207,8 +210,10 @@ function getFullNames(/* CODE HERE */) {
  * @returns an array with all the runners' first names in ALL CAPS.
  * The first names appear in the array in the same order the runners appear in the `runners` array.
 */
-function firstNamesAllCaps(/* CODE HERE */) {
-  /* CODE HERE */
+function firstNamesAllCaps(runners) {
+  let allcapsNames = runners.map(element => {
+    return (element.first_name).toUppercase();
+  });
 }
 
 /**
