@@ -192,10 +192,11 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
  * The full names appear in the array in the same order the runners appear in the `runners` array.
 */
 function getFullNames(runners) {
+  newArray = [];
   runners.forEach((element) => {
-    return (element.last_name + ", " + element.first_name);
+    newArray.push(element.last_name + ", " + element.first_name);
   });
-
+  return newArray;
 }
 
 /**
@@ -211,10 +212,9 @@ function getFullNames(runners) {
  * The first names appear in the array in the same order the runners appear in the `runners` array.
 */
 function firstNamesAllCaps(runners) {
-  let allcapsNames = runners.map(element => {
-    return (element.first_name).toUppercase();
-  });
-}
+  let allcapsNames = runners.map((element) => element["first_name"].toUppercase());
+  return allcapsNames;
+} // failing, had problem
 
 /**
  * ### Challenge `getRunnersByTShirtSize`
@@ -229,9 +229,12 @@ function firstNamesAllCaps(runners) {
  * @returns an array containing only the runners that use the given `tShirtSize`.
  * The runners in the array appear in the same order they appear in the `runners` array.
 */
-function getRunnersByTShirtSize(/* CODE HERE */) {
-  /* CODE HERE */
-}
+function getRunnersByTShirtSize(runners, tShirtSize) {
+  let shirtArray = runners.filter((element) => element.shirt_size == tShirtSize);
+  return shirtArray
+} // pass
+
+
 
 /**
  * ### Challenge `tallyUpDonations`
@@ -243,9 +246,13 @@ function getRunnersByTShirtSize(/* CODE HERE */) {
  * @param runners array of runners like the one inside the /data/runners.js file.
  * @returns a number which is the sum of the donations by all runners.
 */
-function tallyUpDonations(/* CODE HERE */) {
-  /* CODE HERE */
+function tallyUpDonations(runners) {
+  let donations = runners.reduce((total, element) => {
+    total += element.donation}, 0);
+  return donations;
 }
+
+
 
 /////////////// CLOSURES ///////////////
 /////////////// CLOSURES ///////////////
@@ -265,9 +272,9 @@ function tallyUpDonations(/* CODE HERE */) {
 */
 function counterMaker() {
   // BROKEN CODE STARTS
-  const count = 0;
-  function counter() {
-    ++count
+  let count = 0;
+  return function counter() {
+    return count++;
   }
   // BROKEN CODE ENDS
 }
@@ -292,10 +299,17 @@ function counterMaker() {
  * counter() // should return 0
  * etc
 */
-function counterMakerWithLimit(/* CODE HERE */) {
-  /* CODE HERE */
+function counterMakerWithLimit(max) {
+  let count = 0;
+  return function counter() {
+    if (max >= count) {
+      return count++;
+    } else {
+      count = 0;
+      return count++
+    }
+  }
 }
-
 /////////////// END OF CHALLENGE ///////////////
 /////////////// END OF CHALLENGE ///////////////
 /////////////// END OF CHALLENGE ///////////////
