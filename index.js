@@ -167,8 +167,9 @@ function processContains(item, list, callback) {
  * [2] Invoking `processDuplicateFree` passing `[1,1,2,2,3]` and `(arr) => arr.length`,
  * should return 3.
 */
-function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */) {
-  /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
+function processDuplicateFree(list, callback) {
+  let newArray = callback(list);
+  return newArray;
 }
 
 
@@ -212,7 +213,7 @@ function getFullNames(runners) {
  * The first names appear in the array in the same order the runners appear in the `runners` array.
 */
 function firstNamesAllCaps(runners) {
-  let allcapsNames = runners.map((element) => element["first_name"].toUppercase());
+  let allcapsNames = runners.map((element) => element.first_name.toUpperCase());
   return allcapsNames;
 } // failing, had problem
 
@@ -247,12 +248,9 @@ function getRunnersByTShirtSize(runners, tShirtSize) {
  * @returns a number which is the sum of the donations by all runners.
 */
 function tallyUpDonations(runners) {
-  let donations = runners.reduce((total, element) => {
-    total += element.donation}, 0);
+  let donations = runners.reduce((total, element) => (total += element.donation), 0);
   return donations;
-}
-
-
+} // passed
 
 /////////////// CLOSURES ///////////////
 /////////////// CLOSURES ///////////////
